@@ -1,0 +1,17 @@
+.footer {
+    //min-height: 550px;
+    img {
+        width: 100%;
+    }
+    @media (max-width: $adaptiv1) {
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

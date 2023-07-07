@@ -1,0 +1,824 @@
+@import "source/reset";
+@import "source/fonts";
+@import "source/vars";
+
+[class*="--container"] {
+    margin: 0 auto;
+    max-width: 1110px;
+    padding: 0 30px 0;
+    @media (max-width: $adaptiv1) {
+        max-width: $adaptiv2 - 20px;
+    }
+    @media (max-width: $adaptiv2) {
+        max-width: $adaptiv3 - 20px;
+    }
+    @media (max-width: $adaptiv3) {
+        max-width: $adaptiv4 - 10px;
+    }
+    @media (max-width: $adaptiv4) {
+        max-width: 400px;
+    }
+}
+.btn {
+    display: inline-block;
+    padding: 14px 19px;
+    background-color: $btn;
+    font-family: $sans;
+    font-size: 14px;
+    line-height: calc(19 / 14);
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 200ms;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: darken($color: $btn, $amount: 5%);
+    }
+    &:active {
+        background-color: darken($color: $btn, $amount: 10%);
+        position: relative;
+        top: 2px;
+    }
+    &:hover,
+    &:active,
+    &:link,
+    &:visited {
+        color: white;
+    }
+}
+@import "_header";
+@import "_burger";
+@import "_footer";
+.home {
+    &--content {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+        @media (max-width: $adaptiv1) {
+            width: 75%;
+        }
+        @media (max-width: $adaptiv2) {
+            width: 100%;
+        }
+    }
+    &--container {
+        padding-top: 322px;
+        padding-bottom: 231px;
+        @media (max-width: $adaptiv1) {
+            padding-top: 282px;
+        }
+        @media (max-width: $adaptiv2) {
+            padding-top: 232px;
+        }
+        @media (max-width: $adaptiv3) {
+            padding-top: 192px;
+            padding-bottom: 201px;
+        }
+    }
+    &--title {
+        text-align: center;
+        color: $accent;
+        font-family: $tinos;
+        font-size: 50px;
+        line-height: calc(57.5 / 50);
+        font-weight: 400;
+        span {
+            display: block;
+            font-size: 80px;
+            line-height: calc(92 / 80);
+        }
+    }
+    &--subtitle {
+        text-align: center;
+        font-family: $sans;
+        font-size: 18px;
+        line-height: calc(24.5 / 18);
+        font-weight: 400;
+        color: #fff;
+        text-transform: uppercase;
+        position: relative;
+        margin-top: -9px;
+        &::before {
+            content: "";
+            display: block;
+            width: 61px;
+            height: 2px;
+            background-color: #c4c4c4;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            left: -69px;
+        }
+        &::after {
+            content: "";
+            display: block;
+            width: 61px;
+            height: 2px;
+            background-color: #c4c4c4;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+            right: -69px;
+        }
+    }
+    position: relative;
+    &--image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        img {
+            object-position: 75% 50%;
+            @media (max-width: $adaptiv1) {
+                object-position: 10% 50%;
+            }
+            @media (max-width: $adaptiv3) {
+                object-position: 30% 50%;
+            }
+        }
+    }
+}
+.ibg {
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+    }
+}
+.carts {
+    margin-top: -107px;
+    position: relative;
+    z-index: 100;
+    &--list {
+        display: flex;
+        justify-content: space-between;
+
+        gap: 31px;
+        @media (max-width: $adaptiv1) {
+            flex-wrap: wrap;
+        }
+    }
+    &--item {
+        width: 33.333%;
+        height: 328px;
+        @media (max-width: $adaptiv4) {
+            height: 228px;
+        }
+        box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+        background-color: #fff;
+        @media (max-width: $adaptiv1) {
+            width: 48%;
+            &:nth-child(3) {
+                width: 100%;
+            }
+        }
+        @media (max-width: $adaptiv2) {
+            width: 100%;
+        }
+    }
+
+    &--icon {
+        margin-top: 48px;
+        @media (max-width: $adaptiv4) {
+            margin-top: 28px;
+        }
+    }
+    &--title {
+        font-family: $tinos;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        color: #2c2c2c;
+        span {
+            color: $second;
+        }
+        margin-top: -16px;
+        @media (max-width: $adaptiv4) {
+            text-align: center;
+        }
+    }
+    &--text {
+        text-align: center;
+        font-family: $tinos;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        color: $text;
+        @media (max-width: $adaptiv4) {
+            display: none;
+        }
+    }
+}
+.title {
+    font-family: $tinos;
+    font-size: 54px;
+    line-height: calc(62 / 54);
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    span {
+        color: $accent;
+    }
+}
+.history {
+    margin-top: 150px;
+    @media (max-width: $adaptiv1) {
+        margin-top: 130px;
+    }
+    @media (max-width: $adaptiv2) {
+        margin-top: 100px;
+    }
+    @media (max-width: $adaptiv3) {
+        margin-top: 90px;
+    }
+    &--container {
+        display: flex;
+        > * {
+            width: 50%;
+        }
+        @media (max-width: $adaptiv1) {
+            flex-wrap: wrap;
+            > * {
+                width: 100%;
+            }
+            gap: 60px;
+        }
+        @media (max-width: $adaptiv3) {
+            gap: 40px;
+        }
+    }
+    &--image {
+        @media (max-width: $adaptiv1) {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    &--content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+        > * {
+            width: 80%;
+        }
+        @media (max-width: $adaptiv1) {
+            > * {
+                width: 100%;
+            }
+        }
+        @media (max-width: $adaptiv3) {
+            gap: 40px;
+        }
+    }
+
+    &--text {
+        margin-top: -40px;
+        @media (max-width: $adaptiv3) {
+            margin-top: -10px;
+        }
+        text-align: center;
+        color: $text;
+        font-family: $sans;
+        font-size: 16px;
+        line-height: calc(22 / 16);
+    }
+
+    &--menu {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        @media (max-width: $adaptiv3) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &--food {
+        font-size: 20px;
+        line-height: calc(27 / 20);
+        font-family: $sans;
+        text-align: center;
+        span {
+            color: $second;
+            font-size: 40px;
+            line-height: calc(54 / 40);
+            display: block;
+        }
+    }
+}
+.aside {
+    margin-top: 120px;
+    @media (max-width: $adaptiv3) {
+        margin-top: 90px;
+    }
+    &--container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 90px;
+        padding-bottom: 90px;
+        @media (max-width: $adaptiv1) {
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (max-width: $adaptiv3) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
+    &--content {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        @media (max-width: $adaptiv1) {
+            width: 70%;
+        }
+        @media (max-width: $adaptiv2) {
+            width: 100%;
+        }
+    }
+
+    &--mainText {
+        font-family: $tinos;
+        font-size: 52px;
+        line-height: calc(60 / 52);
+        color: $accent;
+        @media (max-width: $adaptiv2) {
+            text-align: center;
+        }
+        @media (max-width: $adaptiv4) {
+            display: none;
+        }
+    }
+    &--dopText {
+        font-family: $sans;
+        font-size: 24px;
+        line-height: calc(32 / 24);
+        color: white;
+        font-weight: 700;
+        @media (max-width: $adaptiv2) {
+            text-align: center;
+        }
+    }
+    background-color: rgba(0, 0, 0, 0.85);
+    position: relative;
+    &--image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+}
+.dishes {
+    &--mainDish {
+        height: 100%;
+        @media (max-width: $adaptiv2) {
+            height: auto;
+        }
+        @media (max-width: $adaptiv3) {
+            width: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        @media (max-width: $adaptiv4) {
+            display: none;
+        }
+    }
+    &--title {
+        margin-top: 132px;
+        margin-bottom: 140px;
+        @media (max-width: $adaptiv1) {
+            margin-top: 102px;
+            margin-bottom: 110px;
+        }
+        @media (max-width: $adaptiv2) {
+            margin-top: 72px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: $adaptiv3) {
+            margin-top: 62px;
+            margin-bottom: 70px;
+        }
+    }
+
+    &--content {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        @media (max-width: $adaptiv2) {
+            flex-direction: column;
+        }
+        @media (max-width: $adaptiv3) {
+            gap: 20px;
+        }
+    }
+
+    &--listDish {
+        flex: 1 0 auto;
+    }
+}
+.listDish {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    @media (max-width: $adaptiv3) {
+        gap: 20px;
+    }
+}
+.dish {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    @media (max-width: $adaptiv3) {
+        gap: 20px;
+    }
+    @media (max-width: $adaptiv4) {
+        flex-direction: column;
+    }
+    &--photo {
+        width: 100%;
+    }
+    &--description {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-family: $tinos;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        span {
+            display: block;
+            flex: 1 0 auto;
+            height: 1px;
+            margin-bottom: -1px;
+            border-top: 1px #000 dashed;
+            @media (max-width: $adaptiv1) {
+                display: none;
+            }
+        }
+    }
+}
+.menu {
+    margin-top: 150px;
+    @media (max-width: $adaptiv2) {
+        margin-top: 120px;
+    }
+    @media (max-width: $adaptiv3) {
+        margin-top: 90px;
+    }
+    &--container {
+        padding-top: 100px;
+        padding-bottom: 225px;
+        @media (max-width: $adaptiv2) {
+            padding-top: 80px;
+            padding-bottom: 200px;
+        }
+        @media (max-width: $adaptiv3) {
+            padding-top: 60px;
+            padding-bottom: 160px;
+        }
+    }
+
+    &--title {
+        margin-bottom: 140px;
+        @media (max-width: $adaptiv2) {
+            margin-bottom: 120px;
+        }
+        @media (max-width: $adaptiv3) {
+            margin-bottom: 80px;
+        }
+    }
+
+    &--list {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        @media (max-width: $adaptiv1) {
+            justify-content: center;
+        }
+    }
+
+    &--item {
+        width: 31%;
+        @media (max-width: $adaptiv1) {
+            &:nth-child(3) {
+                display: none;
+            }
+            width: 48%;
+        }
+        @media (max-width: $adaptiv2) {
+            &:nth-child(2) {
+                display: none;
+            }
+            width: 58%;
+        }
+        @media (max-width: $adaptiv3) {
+            &:nth-child(2) {
+                display: none;
+            }
+            width: 90%;
+        }
+    }
+    position: relative;
+    &--background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+}
+.title-white {
+    color: white;
+}
+.menuItem {
+    padding: 80px 65px 30px;
+    background-color: #fff;
+    &--status {
+        display: none;
+    }
+    position: relative;
+    &-recommended &--status {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: $sans;
+        font-size: 13px;
+        line-height: calc(18 / 13);
+        text-transform: uppercase;
+        color: black;
+        padding: 7px 11px 11px;
+        background-color: $accent;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    &--photo {
+        position: relative;
+    }
+
+    &--img {
+        img {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &--price {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background-color: $accent;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            font-family: $cook;
+            font-size: 30px;
+            line-height: calc(33 / 30);
+            color: #fff;
+        }
+        border: 7px solid #ffffff;
+    }
+
+    &--name {
+        font-family: $tinos;
+        font-size: 26px;
+        line-height: calc(30 / 26);
+        text-align: center;
+    }
+
+    &--description {
+        font-family: $sans;
+        font-size: 16px;
+        line-height: calc(22 / 16);
+        text-align: center;
+    }
+}
+
+.btn-menu {
+    width: 100%;
+    background-color: $accent;
+}
+.reviews {
+    background-color: $bg;
+    &--container {
+        padding-top: 105px;
+        padding-bottom: 110px;
+        @media (max-width: $adaptiv2) {
+            padding-top: 90px;
+            padding-bottom: 95px;
+        }
+        max-width: 920px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        align-items: center;
+    }
+    &--review {
+        display: none;
+        &-selected {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
+.review {
+    display: none;
+    &-selected {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    &--text {
+        text-align: center;
+        font-family: $sans;
+        font-style: italic;
+        font-size: 20px;
+        line-height: calc(27 / 20);
+        width: 100%;
+    }
+    &--photo {
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &--status {
+        font-family: $sans;
+        font-size: 20px;
+        line-height: calc(27 / 20);
+        font-weight: 600;
+    }
+
+    &--name {
+        font-family: $sans;
+        font-size: 20px;
+        line-height: calc(27 / 20);
+        font-weight: 400;
+    }
+}
+.select {
+    margin: auto 0;
+    display: flex;
+    gap: 2px;
+    &--item {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #c4c4c4;
+        &-selected {
+            width: 7px;
+            height: 7px;
+            background-color: transparent;
+            border: 1px solid #ff7400;
+            margin-top: -1px;
+        }
+    }
+}
+.gallery {
+    margin-top: 100px;
+    @media (max-width: $adaptiv2) {
+        margin-top: 70px;
+    }
+    &--title {
+        margin-bottom: 60px;
+        position: relative;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -160px;
+            left: 0;
+            width: 30px;
+            height: 100px;
+            background-color: red;
+            @media (max-width: $adaptiv2) {
+                display: none;
+            }
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -160px;
+            right: 0;
+            width: 30px;
+            height: 100px;
+            background-color: red;
+            @media (max-width: $adaptiv2) {
+                display: none;
+            }
+        }
+    }
+
+    &--grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 22.9%);
+        grid-template-rows: repeat(2, auto);
+        gap: 30px;
+        @media (max-width: $adaptiv1) {
+            grid-template-columns: repeat(2, 48%);
+            grid-template-rows: repeat(4, auto);
+        }
+        @media (max-width: 720px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, 1fr);
+        }
+    }
+}
+.img {
+    &-x2 {
+        grid-column-start: span 2;
+        @media (max-width: $adaptiv3) {
+            grid-column-start: span 1;
+            grid-row-start: span 1;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-position: 75% 50%;
+                height: 100%;
+            }
+        }
+    }
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.cooks {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    @media (max-width: $adaptiv2) {
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    &--container {
+    }
+
+    &--title {
+        margin-bottom: 105px;
+    }
+
+    &--body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        @media (max-width: $adaptiv1) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media (max-width: $adaptiv2) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+    }
+
+    &--cook {
+        width: 30%;
+        img {
+            width: 100%;
+        }
+        @media (max-width: $adaptiv1) {
+            width: 48%;
+        }
+        @media (max-width: $adaptiv2) {
+            width: 100%;
+        }
+    }
+}

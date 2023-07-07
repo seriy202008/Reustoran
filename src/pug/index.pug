@@ -1,0 +1,179 @@
+extends _base
+block Vars
+    - lang = `ru`;
+    - title = `Ресторан`;
+    - style = `style`;
+    - fav = true;
+block Page
+    include _header
+    section.home 
+        .home--container
+            .home--content
+                h1.home--title Добро пожаловать в #[span Наш ресторан]
+                p.home--subtitle Дом лучшей еды
+                a.btn(href="#") View menu
+        .home--image.ibg
+            img(src="@img/home-image.jpg", alt="Фоновая картинка")
+    section.carts 
+        .carts--container
+            ul.carts--list
+                li.carts--item
+                    .carts--icon 
+                        img(src="@img/icon.svg", alt="Иконка ресторана")
+                    h3.carts--title Магическая #[span Атмосфера]
+                    p.carts--text. 
+                        В нашем заведении царит магическая атмосфера наполненная вкусными ароматами
+                li.carts--item
+                    .carts--icon 
+                        img(src="@img/icon.svg", alt="Иконка ресторана")
+                    h3.carts--title Лучшее качество #[span Еды]
+                    p.carts--text. 
+                        Качество нашей <br> Еды - отменное! 
+                li.carts--item
+                    .carts--icon 
+                        img(src="@img/icon.svg", alt="Иконка ресторана")
+                    h3.carts--title Недорогая #[span Еда]
+                    p.carts--text. 
+                        Стоимость нашей Еды зависит только от ее количества. Качество всегда на высоте!
+    section.history
+        .history--container
+            .history--content 
+                h2.history--title.title Наша #[span История]
+                p.history--text. 
+                    Как и у любого другого самобытного места, у нас есть своя, особая история. Идея ресторана пришла основателям неожиданно. Во время прогулки по лесу создатель нашего ресторана застрял в сотнях километров от ближайшего населенного пункта. Вдали от цивилизации и связи им пришлось навремя обустровать себе нехитрый быт, добывать и готовить себе еду.
+                ul.history--menu 
+                    li.history--food #[span 93] Напитки 
+                    li.history--food #[span 206] Еда
+                    li.history--food #[span 71] Закуски
+            .history--image 
+                img(src="@img/history.jpg", alt="Группа картинок")
+    aside.aside
+        .aside--container
+            .aside--content 
+                p.aside--mainText. 
+                    Отпразднуйте в одном из самых лучших ресторанов.
+                p.aside--dopText. 
+                    Только в этом месяце бизнес-ланч от 250 ₽
+            button.btn Заказ столика
+        .aside--image.ibg
+            img(src="@img/aside.jpg", alt="Фоновая картинка")
+    section.dishes 
+        .dishes--container 
+            h2.title.dishes--title Наши #[span Блюда]
+            .dishes--content 
+                .dishes--mainDish 
+                    img(src="@img/pizza.jpg", alt="Пицца")
+                ul.dishes--listDish.listDish
+                    li.listDish--item.dish
+                        img.dish--photo(src="@img/hamburger-mini.jpg", alt="Мини-гамбургер")
+                        .dish--description
+                            p.dish--name Гамбургер мини
+                            span.dish--line
+                            p.dish--price 220 ₽
+                    li.listDish--item.dish
+                        img.dish--photo(src="@img/hamburger-mini.jpg", alt="Мини-гамбургер")
+                        .dish--description
+                            p.dish--name Гамбургер мини
+                            span.dish--line
+                            p.dish--price 220 ₽
+                    li.listDish--item.dish
+                        img.dish--photo(src="@img/hamburger-mini.jpg", alt="Мини-гамбургер")
+                        .dish--description
+                            p.dish--name Гамбургер мини
+                            span.dish--line
+                            p.dish--price 220 ₽
+    section.menu 
+        .menu--container 
+            h2.title.menu--title.title-white Наше меню
+            ul.menu--list 
+                li.menu--item.menuItem.menuItem-recommended 
+                    p.menuItem--status Recommended
+                    .menuItem--photo
+                        .menuItem--img 
+                            img(src="@img/hamburger-maxi.jpg", alt="Макси-гамбургер")
+                        .menuItem--price 
+                            span 420
+                    h3.menuItem--name Гамбургер макси
+                    p.menuItem--description. 
+                        Максимально толстый слой мяса
+                    button.btn.btn-menu Заказать
+                li.menu--item.menuItem
+                    p.menuItem--status Recommended
+                    .menuItem--photo
+                        .menuItem--img 
+                            img(src="@img/hamburger-maxi.jpg", alt="Макси-гамбургер")
+                        .menuItem--price 
+                            span 420
+                    h3.menuItem--name Гамбургер макси
+                    p.menuItem--description. 
+                        Максимально толстый слой мяса
+                    button.btn.btn-menu Заказать
+                li.menu--item.menuItem
+                    p.menuItem--status Recommended
+                    .menuItem--photo
+                        .menuItem--img 
+                            img(src="@img/hamburger-maxi.jpg", alt="Макси-гамбургер")
+                        .menuItem--price 
+                            span 420
+                    h3.menuItem--name Гамбургер макси
+                    p.menuItem--description. 
+                        Максимально толстый слой мяса
+                    button.btn.btn-menu Заказать
+        .menu--background.ibg 
+            img(src="@img/menu.jpg", alt="Фоновая картинка")
+    section.reviews
+        .reviews--container 
+            .reviews--content 
+                .reviews--review.review
+                    p.review--text. 
+                        Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплепент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
+                    .review--photo 
+                        img(src="@img/review.jpg", alt="Фото автора отзыва")
+                    p.review--status Посетитель
+                    p.review--name Николай
+                .reviews--review.review
+                    p.review--text. 
+                        Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплепент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
+                    .review--photo 
+                        img(src="@img/review.jpg", alt="Фото автора отзыва")
+                    p.review--status Посетитель
+                    p.review--name Николай
+                .reviews--review.review.review-selected
+                    p.review--text. 
+                        Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплепент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
+                    .review--photo 
+                        img(src="@img/review.jpg", alt="Фото автора отзыва")
+                    p.review--status Посетитель
+                    p.review--name Николай
+            .reviews--select.select
+                button.select--item
+                button.select--item
+                button.select--item.select--item-selected
+    section.gallery
+        h2.gallery--title.title Галерея #[span Блюд]
+        .gallery--container
+            .gallery--grid 
+                .img.img-x2 
+                    img(src="@img/gallery-img-x2.jpg", alt="Картинка")
+                .img
+                    img(src="@img/gallery-img-1.jpg", alt="Картинка")
+                .img
+                    img(src="@img/gallery-img-2.jpg", alt="Картинка")
+
+                .img
+                    img(src="@img/gallery-img-1.jpg", alt="Картинка")
+                .img
+                    img(src="@img/gallery-img-2.jpg", alt="Картинка")
+                .img.img-x2
+                    img(src="@img/gallery-img-x2.jpg", alt="Картинка")
+    section.cooks 
+        .cooks--container 
+            .cooks--title.title Наши #[span Повара]
+            .cooks--body 
+                .cooks--cook
+                    img(src="@img/cook-1.jpg", alt="Повар")
+                .cooks--cook
+                    img(src="@img/cook-2.jpg", alt="Повар")
+                .cooks--cook
+                    img(src="@img/cook-3.jpg", alt="Повар")
+    include _footer

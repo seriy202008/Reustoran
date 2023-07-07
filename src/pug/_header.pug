@@ -1,0 +1,54 @@
+-
+    let navItems = [
+        {
+            text: 'Главная',
+            link: '#',
+        },
+        {
+            text: 'Меню',
+            link: '#',
+        },
+        {
+            text: 'О нас',
+            link: '#',
+        },
+        {
+            text: 'Бронь',
+            link: '#',
+        },
+    ];
+header.header 
+    .header--container 
+        a(href="index.html").logo.header--logo
+            img(src="@img/logo.svg", alt="логотип")
+        .header--body 
+            nav.nav.header--nav
+                ul.nav--list 
+                    each item in navItems
+                        li.nav--item 
+                            a.nav--link(href=item.link)= item.text
+                button.nav--purchase
+                    img(src="@img/cart.svg", alt="Иконка тележки для покупок")
+                
+            .header--contact 
+                a.header--tel(href="tel:+9998887654") 
+                    img(src="@img/tel.svg", alt="Иконка телефонной трубки")
+                    span +999-888-76-54
+                p.header--text Свяжитесь с нами для бронирования
+            button.btn Заказ столика
+        .burger 
+            button.burger--button 
+                span 
+                span 
+                span 
+            .burger--menu 
+                .burger--container
+                    ul.burger--list 
+                        each item in navItems
+                            li.burger--item 
+                                a.burger--link(href=item.link)= item.text
+                    .burger--contacts 
+                        button.btn Заказ столика
+                    button.burger--close 
+                        span 
+                        span 
