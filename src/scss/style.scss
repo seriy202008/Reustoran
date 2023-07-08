@@ -456,7 +456,9 @@
         flex-direction: column;
     }
     &--photo {
-        width: 100%;
+        @media (max-width: $adaptiv4) {
+            width: 100%;
+        }
     }
     &--description {
         flex: 1 0 auto;
